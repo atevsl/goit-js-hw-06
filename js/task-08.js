@@ -13,7 +13,10 @@ loginFormEl.addEventListener('submit', event => {
     elements: { email, password },
   } = event.currentTarget;
 
-  console.log(loginFormEl.elements);
+  console.log({
+    [email.name]: email.value,
+    [password.name]: password.value,
+  });
 
   event.currentTarget.reset();
 });
