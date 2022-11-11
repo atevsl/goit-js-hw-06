@@ -16,14 +16,16 @@ btnDestroyEl.addEventListener('click', destroyBoxes);
 
 function createBoxes(amount) {
   let size = 20;
+  const markUp = [];
   for (let i = 0; i < amount; i += 1) {
     const newEl = document.createElement('div');
     size += 10;
     newEl.style.width = `${size}px`;
     newEl.style.height = `${size}px`;
     newEl.style.backgroundColor = getRandomHexColor();
-    divBoxesEl.appendChild(newEl);
+    markUp.push(newEl);
   }
+  divBoxesEl.append(...markUp);
 }
 
 function destroyBoxes() {
